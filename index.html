@@ -3,269 +3,502 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mat Moura – AI Automation & Software</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Bottleneck Audit for SaaS Founders. First Fixes in 7 Days. | Mat Moura Technologies</title>
   <meta name="description"
-    content="Mat Moura operates a US LLC providing AI automation and software development services to business clients worldwide." />
+    content="Mat Moura Technologies finds what is slowing your growth and implements the fix with AI, automation, and software. Fast, measurable, and owner-led." />
+  <link rel="canonical" href="https://matmoura.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bottleneck Audit for SaaS Founders. First Fixes in 7 Days." />
+  <meta property="og:description"
+    content="Mat Moura Technologies finds what is slowing your growth and implements the fix with AI, automation, and software. Fast, measurable, and owner-led." />
+  <meta property="og:image" content="https://matmoura.com/assets/og.png" />
+  <meta property="og:url" content="https://matmoura.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bottleneck Audit for SaaS Founders. First Fixes in 7 Days." />
+  <meta name="twitter:description"
+    content="Mat Moura Technologies finds what is slowing your growth and implements the fix with AI, automation, and software. Fast, measurable, and owner-led." />
+  <meta name="twitter:image" content="https://matmoura.com/assets/og.png" />
+
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+
   <style>
-    :root {
-      --bg: #0b0f14;
-      --card: #101722;
-      --text: #e6edf3;
-      --muted: #9fb0c0;
-      --line: #1f2a38;
-      --accent: #6aa9ff;
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: linear-gradient(180deg, var(--bg), #070a0f);
-      color: var(--text);
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none
-    }
-
-    a:hover {
-      text-decoration: underline
-    }
-
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 56px 18px;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
-    .kicker {
-      color: var(--muted);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 34px;
-      line-height: 1.15;
-    }
-
-    .sub {
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.5;
-      max-width: 70ch;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    @media (min-width:820px) {
-      .grid {
-        grid-template-columns: 1.1fr .9fr
-      }
-    }
-
-    .card {
-      background: rgba(16, 23, 34, .9);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
-    }
-
-    .card h2 {
-      margin: 0 0 10px 0;
-      font-size: 16px;
-      letter-spacing: .02em;
-    }
-
-    ul {
-      margin: 10px 0 0 18px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(106, 169, 255, .12);
-      border: 1px solid rgba(106, 169, 255, .25);
-      color: var(--text);
-      font-size: 12px;
-      margin-right: 8px;
-      margin-top: 8px;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .meta {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .cta {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 12px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: #0c1420;
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    .btn.primary {
-      border-color: rgba(106, 169, 255, .35);
-      background: rgba(106, 169, 255, .14);
-    }
-
-    footer {
-      margin-top: 24px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .small {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .hr {
-      height: 1px;
-      background: var(--line);
-      margin: 14px 0;
-    }
-
-    code {
-      color: #cfe3ff;
-      background: rgba(255, 255, 255, .04);
-      border: 1px solid var(--line);
-      padding: 2px 6px;
-      border-radius: 8px;
+    html {
+      scroll-behavior: smooth;
     }
   </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Mat Moura Technologies LLC",
+      "url": "https://matmoura.com/",
+      "logo": "https://matmoura.com/assets/favicon.png",
+      "email": "mateus.nardo@migii.com.br"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Mat Moura Technologies",
+      "url": "https://matmoura.com/",
+      "image": "https://matmoura.com/assets/og.png",
+      "email": "mateus.nardo@migii.com.br",
+      "areaServed": "Worldwide",
+      "serviceType": [
+        "AI automation",
+        "Software engineering",
+        "Systems integration",
+        "Internal tools"
+      ],
+      "provider": {
+        "@type": "Organization",
+        "name": "Mat Moura Technologies LLC",
+        "url": "https://matmoura.com/"
+      }
+    }
+  </script>
 </head>
 
-<body>
-  <main class="wrap">
-    <header class="hero">
-      <h1>Mat Moura Technologies LLC</h1>
-      <p class="kicker">AI Automation & Software Development</p>
-      <p class="sub">
-        We provide AI automation and custom software development services to business clients worldwide.
-        All services are delivered remotely under B2B service agreements.
+<body class="bg-[#0F2A4A] text-zinc-100 antialiased">
+  <main class="mx-auto max-w-6xl px-5 py-10 sm:py-16">
+
+    <!-- Hero -->
+    <section
+      class="relative overflow-hidden rounded-3xl border border-[#1A3D5C] bg-gradient-to-b from-[#133052]/60 to-[#0F2A4A]">
+      <div class="absolute inset-0 opacity-40" aria-hidden="true"
+        style="background: radial-gradient(900px 400px at 15% 15%, rgba(201,162,39,0.3), transparent 60%), radial-gradient(700px 380px at 80% 30%, rgba(201,162,39,0.15), transparent 55%);">
+      </div>
+
+      <div class="relative p-7 sm:p-12">
+        <p
+          class="inline-flex items-center gap-2 rounded-full border border-[#1A3D5C] bg-[#0B2240]/40 px-3 py-1 text-xs font-medium tracking-wide text-zinc-200">
+          Mat Moura Technologies
+          <span class="h-1 w-1 rounded-full bg-zinc-500"></span>
+          Owner-led delivery
+        </p>
+
+        <h1 class="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
+          Bottleneck Audit for SaaS Founders. First Fixes in 7 Days.
+        </h1>
+
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
+          Mat Moura Technologies finds what is slowing your growth and implements the fix with AI, automation, and
+          software.
+          Fast, measurable, and owner-led.
+        </p>
+
+        <ul class="mt-6 grid gap-2 text-sm text-zinc-300 sm:grid-cols-3">
+          <li class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 px-4 py-3">Identify the bottleneck that is
+            costing you time and revenue</li>
+          <li class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 px-4 py-3">Ship the first fixes within 7 days
+          </li>
+          <li class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 px-4 py-3">Measure impact and iterate weekly
+          </li>
+        </ul>
+
+        <div class="mt-7 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <a href="#audit"
+            class="inline-flex items-center justify-center rounded-xl bg-[#C9A227] px-5 py-3 text-sm font-semibold text-[#0F2A4A] shadow-sm hover:bg-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#C9A227]/60">
+            Book a 30-Minute Bottleneck Audit
+          </a>
+          <p class="text-sm text-zinc-400">Pricing on request. Built for founders with real operations and revenue.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualification -->
+    <section class="mt-12 grid gap-5 lg:grid-cols-2">
+      <div class="rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+        <h2 class="text-lg font-semibold text-white">This Is For You If</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-300">
+          <li>✅ You have a real product and real users</li>
+          <li>✅ Revenue is coming in, but growth hit an execution wall</li>
+          <li>✅ Manual processes, tooling debt, or slow shipping is hurting throughput</li>
+          <li>✅ You see technology as an investment, not a cost</li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+        <h2 class="text-lg font-semibold text-white">Not a Fit If</h2>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-300">
+          <li>❌ You are pre-revenue or still validating an idea</li>
+          <li>❌ You want cheap development hours or a long agency process</li>
+          <li>❌ You need perfect specs before anything can move</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Problem -> desired state -->
+    <section class="mt-12 rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6 sm:p-8">
+      <h2 class="text-lg font-semibold text-white">When Growth Stalls Because You Can't Take More Clients In</h2>
+      <p class="mt-4 max-w-3xl text-sm leading-relaxed text-zinc-300">
+        Bottlenecks are hiding inside a system that is working but not scaling.
       </p>
-    </header>
-
-    <section class="card" style="margin-bottom: 14px;">
-      <h2>About the Company</h2>
-      <div class="meta">
-        Mat Moura Technologies LLC is a US limited liability company providing:
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 p-5">
+          <p class="text-xs font-semibold uppercase tracking-wide text-zinc-400">You are here</p>
+          <p class="mt-2 text-sm text-zinc-200">Founder firefighting and manual work</p>
+        </div>
+        <div class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 p-5">
+          <p class="text-xs font-semibold uppercase tracking-wide text-zinc-400">You want this</p>
+          <p class="mt-2 text-sm text-zinc-200">A system that runs, ships, and scales</p>
+        </div>
       </div>
-      <ul>
-        <li>AI workflow automation</li>
-        <li>API integrations and systems integration</li>
-        <li>Custom internal tools and dashboards</li>
-        <li>Software engineering services</li>
+    </section>
+
+    <!-- How it works -->
+    <section class="mt-12">
+      <h2 class="text-lg font-semibold text-white">How It Works</h2>
+      <div class="mt-5 grid gap-4 lg:grid-cols-3">
+        <div class="rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-zinc-400">Step 1</p>
+          <h3 class="mt-2 font-semibold text-white">Audit (30 minutes)</h3>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-300">
+            We map your current workflow, identify the highest-leverage bottleneck, and define what fixed means.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-zinc-400">Step 2</p>
+          <h3 class="mt-2 font-semibold text-white">First fixes in 7 days</h3>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-300">
+            We implement the first set of improvements quickly, without requiring perfect specs.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-zinc-400">Step 3</p>
+          <h3 class="mt-2 font-semibold text-white">Measure and iterate</h3>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-300">
+            We validate impact, adjust, and move to the next bottleneck.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="mt-12 rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6 sm:p-8">
+      <h2 class="text-lg font-semibold text-white">What You Get</h2>
+      <div class="mt-5 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 px-5 py-4 text-sm text-zinc-200">Faster execution
+          without adding headcount</div>
+        <div class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 px-5 py-4 text-sm text-zinc-200">Less manual work
+          across ops, sales, and support</div>
+        <div class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 px-5 py-4 text-sm text-zinc-200">Cleaner systems
+          and fewer fragile processes</div>
+        <div class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 px-5 py-4 text-sm text-zinc-200">Integrations
+          that reduce context switching</div>
+        <div class="rounded-xl border border-[#1A3D5C] bg-[#0B2240]/30 px-5 py-4 text-sm text-zinc-200">AI automation
+          where it actually makes sense</div>
+      </div>
+    </section>
+
+    <!-- Proof -->
+    <section class="mt-12">
+      <h2 class="text-lg font-semibold text-white">Proof</h2>
+
+      <div class="mt-5 grid gap-4 lg:grid-cols-2">
+        <figure class="rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <blockquote class="text-sm leading-relaxed text-zinc-200">
+            “We were capped at around R$12k/month, running a manual operation with very limited scalability. He quickly
+            identified the critical bottlenecks and turned fragile processes into technology-driven solutions. Within a
+            few months, we reached R$50k/month.”
+          </blockquote>
+          <figcaption class="mt-4 text-sm text-zinc-400">Founder, amppy.com.br (4x revenue)</figcaption>
+        </figure>
+
+        <div class="rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <p class="text-sm font-semibold text-white">Selected outcomes</p>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+            <li><span class="font-semibold text-zinc-100">amppy.com.br:</span> R$12k/month → R$50k/month (4x revenue)
+            </li>
+            <li><span class="font-semibold text-zinc-100">tacticalpost.ai:</span> Full AI SEO product shipped in ~2
+              weeks → 3 new 4-figure customers</li>
+            <li><span class="font-semibold text-zinc-100">Education platform (100k+ students):</span> 20+ hours saved
+              per month with internal tools and Telegram bots</li>
+            <li><span class="font-semibold text-zinc-100">aiellohotels.com:</span> Wix replaced in 1 week → 2,000
+              monthly
+              impressions and 10% conversion lift</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer -->
+    <section class="mt-12 rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6 sm:p-8">
+      <h2 class="text-lg font-semibold text-white">The Bottleneck Audit</h2>
+      <p class="mt-4 max-w-3xl text-sm leading-relaxed text-zinc-300">In the audit call, you get:</p>
+      <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-300">
+        <li>A clear bottleneck diagnosis</li>
+        <li>A prioritized next step</li>
+        <li>A proposed 7-day implementation plan</li>
+        <li>A decision on build vs buy vs ignore</li>
       </ul>
-      <div class="meta" style="margin-top: 14px;">
-        The company operates remotely and serves international business clients.
+      <p class="mt-5 text-sm text-zinc-300"><span class="font-semibold text-zinc-100">Pricing:</span> Pricing is on
+        request. We work with teams that already have revenue and want to invest in execution and leverage.</p>
+
+      <div class="mt-7">
+        <a href="#audit"
+          class="inline-flex items-center justify-center rounded-xl bg-[#C9A227] px-5 py-3 text-sm font-semibold text-[#0F2A4A] shadow-sm hover:bg-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#C9A227]/60">
+          Book a 30-Minute Bottleneck Audit
+        </a>
       </div>
     </section>
 
-    <section class="card" style="margin-bottom: 14px;">
-      <h2>Services</h2>
+    <!-- Guarantee -->
+    <section class="mt-12 rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6 sm:p-8">
+      <h2 class="text-lg font-semibold text-white">7-Day Trial Guarantee</h2>
+      <p class="mt-4 max-w-3xl text-sm leading-relaxed text-zinc-300">
+        If you decide to move forward after the audit, the first 7 days are risk-free.
+        If you do not see value, you get a 100% refund.
+      </p>
+    </section>
 
-      <div style="margin-bottom: 16px;">
-        <h3 style="margin: 0 0 6px 0; font-size: 15px; color: var(--accent);">AI Automation Consulting</h3>
-        <div class="meta" style="margin-top: 0;">
-          Design and implementation of AI-powered workflows for operations, sales, and support teams.
-        </div>
-      </div>
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="text-lg font-semibold text-white">FAQ</h2>
 
-      <div style="margin-bottom: 16px;">
-        <h3 style="margin: 0 0 6px 0; font-size: 15px; color: var(--accent);">Custom Software Development</h3>
-        <div class="meta" style="margin-top: 0;">
-          Development of backend systems, internal platforms, and integrations.
-        </div>
-      </div>
+      <div class="mt-5 grid gap-4 lg:grid-cols-2">
+        <details class="group rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <summary class="cursor-pointer list-none font-semibold text-white">
+            Do you only do AI automation?
+            <span class="float-right text-zinc-500 group-open:hidden">+</span>
+            <span class="float-right text-zinc-500 hidden group-open:inline">−</span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-300">No. We use AI when it is the right tool. The goal is
+            operational leverage and measurable outcomes.</p>
+        </details>
 
-      <div>
-        <h3 style="margin: 0 0 6px 0; font-size: 15px; color: var(--accent);">Technical Implementation & Advisory</h3>
-        <div class="meta" style="margin-top: 0;">
-          Hands-on engineering and architecture support for product and engineering teams.
-        </div>
+        <details class="group rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <summary class="cursor-pointer list-none font-semibold text-white">
+            Do you build custom software?
+            <span class="float-right text-zinc-500 group-open:hidden">+</span>
+            <span class="float-right text-zinc-500 hidden group-open:inline">−</span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-300">Yes. Internal tools, dashboards, integrations, and
+            workflow improvements are common outcomes.</p>
+        </details>
+
+        <details class="group rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <summary class="cursor-pointer list-none font-semibold text-white">
+            We already have engineers. Can you still help?
+            <span class="float-right text-zinc-500 group-open:hidden">+</span>
+            <span class="float-right text-zinc-500 hidden group-open:inline">−</span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-300">Yes. We can support architecture, prioritization, and
+            implementation, or unblock specific delivery bottlenecks.</p>
+        </details>
+
+        <details class="group rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <summary class="cursor-pointer list-none font-semibold text-white">
+            What do you need from us to start?
+            <span class="float-right text-zinc-500 group-open:hidden">+</span>
+            <span class="float-right text-zinc-500 hidden group-open:inline">−</span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-300">A clear view of your current workflow and the problem
+            you want solved. We handle the rest.</p>
+        </details>
+
+        <details class="group rounded-2xl border border-[#1A3D5C] bg-[#133052]/40 p-6">
+          <summary class="cursor-pointer list-none font-semibold text-white">
+            Do you work with SMBs too?
+            <span class="float-right text-zinc-500 group-open:hidden">+</span>
+            <span class="float-right text-zinc-500 hidden group-open:inline">−</span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-zinc-300">Yes, as long as you have an existing digital presence.
+          </p>
+        </details>
       </div>
     </section>
 
-    <section class="grid">
-      <article class="card">
-        <h2>How We Operate</h2>
-        <ul>
-          <li>B2B service agreements</li>
-          <li>Monthly invoicing</li>
-          <li>Remote service delivery</li>
-          <li>International clients</li>
-        </ul>
-        <div class="meta" style="margin-top: 14px;">
-          Payments are received via bank transfer under signed service contracts.
-        </div>
-      </article>
+    <!-- Audit (final CTA + form) -->
+    <section id="audit"
+      class="mt-12 rounded-3xl border border-[#1A3D5C] bg-gradient-to-b from-[#133052]/50 to-[#0F2A4A] p-6 sm:p-10">
+      <div class="grid min-w-0 gap-8 lg:grid-cols-2 lg:items-start">
+        <div class="min-w-0">
+          <h2 class="text-2xl font-semibold tracking-tight text-white">Book a 30-Minute Bottleneck Audit</h2>
+          <p class="mt-4 text-sm leading-relaxed text-zinc-300">
+            Fill the form and send your context by email. Then pick a time slot.
+          </p>
 
-      <aside class="card">
-        <h2>Company Information</h2>
-        <ul>
-          <li><strong>Company Name:</strong> Mat Moura Technologies LLC</li>
-          <li><strong>State of Formation:</strong> Wyoming, USA</li>
-          <li><strong>EIN:</strong> **-****1741</li>
-        </ul>
-
-        <div class="cta">
-          <a class="btn primary" href="mailto:mateusdnm@hotmail.com">Email</a>
-          <a class="btn" href="https://www.linkedin.com/in/mateusdnm/">LinkedIn</a>
-          <a class="btn" href="https://github.com/mdnm">GitHub</a>
+          <div class="mt-5 rounded-2xl border border-[#1A3D5C] bg-[#0B2240]/40 p-5">
+            <p class="text-sm font-semibold text-white">Scheduling link</p>
+            <p class="mt-2 text-sm text-zinc-300">
+              <a class="break-all font-semibold text-[#C9A227] underline decoration-[#C9A227]/50 hover:decoration-[#C9A227]"
+                target="_blank" rel="noopener noreferrer"
+                href="https://calendar.app.google/8panyKceyYzEwL3f7">https://calendar.app.google/8panyKceyYzEwL3f7</a>
+            </p>
+            <p class="mt-3 text-xs text-zinc-400">If the link does not open, copy and paste it in a new tab.</p>
+          </div>
         </div>
-      </aside>
+
+        <form id="auditForm" class="min-w-0 rounded-2xl border border-[#1A3D5C] bg-[#0B2240]/40 p-6" novalidate>
+          <div class="grid min-w-0 gap-4">
+            <label class="grid gap-1">
+              <span class="text-sm font-medium text-zinc-200">Name</span>
+              <input required name="name" autocomplete="name"
+                class="rounded-xl border border-[#1A3D5C] bg-[#0B2240] px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/30"
+                placeholder="Your name" />
+            </label>
+
+            <label class="grid gap-1">
+              <span class="text-sm font-medium text-zinc-200">Email</span>
+              <input required type="email" name="email" autocomplete="email"
+                class="rounded-xl border border-[#1A3D5C] bg-[#0B2240] px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/30"
+                placeholder="you@company.com" />
+            </label>
+
+            <label class="grid gap-1">
+              <span class="text-sm font-medium text-zinc-200">Company</span>
+              <input required name="company" autocomplete="organization"
+                class="rounded-xl border border-[#1A3D5C] bg-[#0B2240] px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/30"
+                placeholder="Company name" />
+            </label>
+
+            <label class="grid gap-1">
+              <span class="text-sm font-medium text-zinc-200">Monthly revenue</span>
+              <select required name="revenue" id="revenueSelect"
+                class="rounded-xl border border-[#1A3D5C] bg-[#0B2240] px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#C9A227]/30">
+                <option value="" selected disabled>Select one</option>
+                <option value="< $5k/mo">&lt; $5k/mo</option>
+                <option value="$5k–$20k">$5k–$20k</option>
+                <option value="$20k–$50k">$20k–$50k</option>
+                <option value="$50k–$200k">$50k–$200k</option>
+                <option value="$200k+">$200k+</option>
+              </select>
+            </label>
+
+            <label class="grid gap-1">
+              <span class="text-sm font-medium text-zinc-200">What is breaking right now?</span>
+              <textarea required name="problem" rows="5"
+                class="rounded-xl border border-[#1A3D5C] bg-[#0B2240] px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/30"
+                placeholder="Give a short, concrete description. What is stuck? What is costing time or revenue?"></textarea>
+            </label>
+
+            <div id="revenueGate"
+              class="hidden rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+              We currently work with teams doing at least $5k/month in revenue. If you are not there yet, come back once
+              you have consistent demand.
+            </div>
+
+            <button id="submitBtn" type="submit"
+              class="mt-1 inline-flex items-center justify-center rounded-xl bg-[#C9A227] px-5 py-3 text-sm font-semibold text-[#0F2A4A] shadow-sm hover:bg-[#D4AF37] disabled:cursor-not-allowed disabled:opacity-40">
+              Send Audit Request
+            </button>
+
+            <p class="text-xs leading-relaxed text-zinc-400">
+              This form opens your email client and drafts a message to <span
+                class="font-semibold text-zinc-200">mateus.nardo@migii.com.br</span>.
+            </p>
+          </div>
+        </form>
+      </div>
     </section>
 
-    <footer>
-      Last updated: February 03, 2026<br />
+    <footer class="mt-12 border-t border-[#1A3D5C] pt-8">
+      <div class="flex flex-col-reverse items-center gap-4 sm:flex-row sm:justify-between">
+        <p class="text-xs text-zinc-500">© <span id="year"></span> Mat Moura Technologies LLC. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/mateusdnm/" target="_blank" rel="noopener noreferrer"
+            class="text-zinc-400 hover:text-[#C9A227] transition-colors" aria-label="LinkedIn">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/mdnm" target="_blank" rel="noopener noreferrer"
+            class="text-zinc-400 hover:text-[#C9A227] transition-colors" aria-label="GitHub">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </footer>
   </main>
+
+  <script>
+    (function () {
+      const EMAIL_TO = 'mateus.nardo@migii.com.br';
+      const CTA_SUBJECT = 'Bottleneck Audit Request';
+
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      const form = document.getElementById('auditForm');
+      const revenueSelect = document.getElementById('revenueSelect');
+      const gateEl = document.getElementById('revenueGate');
+      const submitBtn = document.getElementById('submitBtn');
+
+      function isBlockedRevenue(value) {
+        return value === '< $5k/mo';
+      }
+
+      function syncRevenueGate() {
+        const value = revenueSelect ? revenueSelect.value : '';
+        const blocked = isBlockedRevenue(value);
+
+        if (gateEl) gateEl.classList.toggle('hidden', !blocked);
+        if (submitBtn) submitBtn.disabled = blocked;
+      }
+
+      if (revenueSelect) {
+        revenueSelect.addEventListener('change', syncRevenueGate);
+      }
+
+      syncRevenueGate();
+
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const data = new FormData(form);
+        const name = (data.get('name') || '').toString().trim();
+        const email = (data.get('email') || '').toString().trim();
+        const company = (data.get('company') || '').toString().trim();
+        const revenue = (data.get('revenue') || '').toString().trim();
+        const problem = (data.get('problem') || '').toString().trim();
+
+        if (!name || !email || !company || !revenue || !problem) {
+          alert('Please fill all fields.');
+          return;
+        }
+
+        if (isBlockedRevenue(revenue)) {
+          syncRevenueGate();
+          return;
+        }
+
+        const bodyLines = [
+          'New Bottleneck Audit Request',
+          '',
+          'Name: ' + name,
+          'Email: ' + email,
+          'Company: ' + company,
+          'Monthly revenue: ' + revenue,
+          '',
+          'What is breaking right now:',
+          problem,
+          '',
+          'Scheduling link: https://calendar.app.google/8panyKceyYzEwL3f7'
+        ];
+
+        const subject = encodeURIComponent(CTA_SUBJECT);
+        const body = encodeURIComponent(bodyLines.join('\n'));
+
+        window.location.href = 'mailto:' + encodeURIComponent(EMAIL_TO) + '?subject=' + subject + '&body=' + body;
+      });
+    })();
+  </script>
 </body>
 
 </html>
