@@ -1,0 +1,25 @@
+{
+  "name": "matmoura",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/mdnm/matmoura#readme",
+  "bugs": {
+    "url": "https://github.com/mdnm/matmoura/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdnm/matmoura.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "tailwindcss": "^4.1.18",
+    "vite": "^7.3.1"
+  }
+}
