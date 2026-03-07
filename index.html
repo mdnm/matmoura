@@ -45,7 +45,17 @@
         "name": "Mat Moura Technologies LLC",
         "url": "https://matmoura.com/",
         "logo": "https://matmoura.com/assets/favicon.png",
-        "email": "mateus.nardo@migii.com.br"
+        "email": "mat@matmoura.com",
+        "duns": "143331987",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "WY",
+          "addressCountry": "US"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Mat Moura"
+        }
       }
     </script>
   <script type="application/ld+json">
@@ -55,7 +65,7 @@
         "name": "Mat Moura Technologies",
         "url": "https://matmoura.com/",
         "image": "https://matmoura.com/assets/og.png",
-        "email": "mateus.nardo@migii.com.br",
+        "email": "mat@matmoura.com",
         "areaServed": "Worldwide",
         "serviceType": [
           "AI automation",
@@ -570,7 +580,7 @@
 
             <p class="text-xs leading-relaxed text-[var(--color-text-secondary)]">
               This form opens your email client and drafts a message to
-              <span class="font-semibold text-[var(--color-text-primary)]">mateus.nardo@migii.com.br</span>.
+              <span class="font-semibold text-[var(--color-text-primary)]">mat@matmoura.com</span>.
             </p>
           </div>
         </form>
@@ -600,6 +610,17 @@
           </div>
         </div>
         <p class="text-xs text-[var(--color-text-secondary)]">
+          Wyoming, United States &middot;
+          <a href="mailto:mat@matmoura.com" class="hover:text-[var(--color-text-accent)] transition-colors">mat@matmoura.com</a>
+        </p>
+        <div class="flex items-center gap-3 text-xs text-[var(--color-text-secondary)]">
+          <a href="/company/" class="hover:text-[var(--color-text-accent)] transition-colors">Company</a>
+          <span>&middot;</span>
+          <a href="/privacy/" class="hover:text-[var(--color-text-accent)] transition-colors">Privacy</a>
+          <span>&middot;</span>
+          <a href="/terms/" class="hover:text-[var(--color-text-accent)] transition-colors">Terms</a>
+        </div>
+        <p class="text-xs text-[var(--color-text-secondary)]">
           &copy; <span id="year"></span> Mat Moura Technologies LLC. All rights
           reserved.
         </p>
@@ -610,7 +631,7 @@
   <script type="module" src="/main.js"></script>
   <script>
     (function () {
-      const EMAIL_TO = "mateus.nardo@migii.com.br";
+      const EMAIL_TO = "mat@matmoura.com";
       const CTA_SUBJECT = "Bottleneck Audit Request";
 
       const yearEl = document.getElementById("year");
