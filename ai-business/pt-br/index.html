@@ -148,6 +148,7 @@
       let pathMatch = location.pathname.match(/\/ai-business\/([^/]+)/);
       let lang = pathMatch ? pathMatch[1] : 'pt-br';
       if (lang === 'pt') lang = 'pt-br';
+      let CACHE_V = 'v2';
       let CONTENT_BASE = S3_BASE + '/' + lang + '/';
       let PROGRESS_KEY = 'ab_progress_' + lang;
 
@@ -237,7 +238,7 @@
 
       async function initCourse() {
         try {
-          var res = await fetch(CONTENT_BASE + 'index.json');
+          var res = await fetch(CONTENT_BASE + 'index.json?' + CACHE_V);
           courseIndex = await res.json();
         } catch (e) {
           $('#welcome').innerHTML = '<p class="text-red-400">Falha ao carregar os dados do curso.</p>';
@@ -414,7 +415,7 @@
       async function loadModule(moduleId) {
         if (moduleCache[moduleId]) return moduleCache[moduleId];
         try {
-          var res = await fetch(CONTENT_BASE + moduleId + '.json');
+          var res = await fetch(CONTENT_BASE + moduleId + '.json?' + CACHE_V);
           var data = await res.json();
           moduleCache[moduleId] = data;
           return data;
