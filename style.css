@@ -26,6 +26,11 @@
 }
 
 /* ── Base ── */
+a,
+button {
+  cursor: pointer;
+}
+
 html {
   scroll-behavior: smooth;
 }
