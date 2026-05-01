@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="utf-8" />
@@ -26,13 +26,13 @@
   <!-- ── Gate ── -->
   <div id="gate" class="min-h-screen flex items-center justify-center px-4">
     <div class="card-editorial max-w-sm w-full text-center">
-      <p class="text-label mb-2">Members Only</p>
+      <p class="text-label mb-2">Somente Membros</p>
       <h1 class="text-section mb-6">AI Business</h1>
       <form id="gate-form" class="space-y-4">
-        <input id="gate-input" type="password" class="form-input text-center" placeholder="Enter access code"
+        <input id="gate-input" type="password" class="form-input text-center" placeholder="Digite o código de acesso"
           autocomplete="off" />
-        <button type="submit" class="btn-primary w-full">Unlock Course</button>
-        <p id="gate-error" class="text-sm text-red-400 hidden">Invalid code. Try again.</p>
+        <button type="submit" class="btn-primary w-full">Desbloquear Curso</button>
+        <p id="gate-error" class="text-sm text-red-400 hidden">Código inválido. Tente novamente.</p>
       </form>
     </div>
   </div>
@@ -44,14 +44,14 @@
     <header
       class="course-mobile-header lg:hidden sticky top-0 z-30 flex items-center gap-3 px-4 py-3 border-b border-[var(--color-border)] bg-[var(--color-bg)]">
       <button id="sidebar-toggle" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
-        aria-label="Toggle sidebar">
+        aria-label="Alternar barra lateral">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
       <span id="mobile-title" class="text-sm font-semibold truncate flex-1 text-[var(--color-text-primary)]">AI
         Business</span>
-      <button id="lang-toggle-mobile" class="text-lg leading-none" aria-label="Change language"></button>
+      <button id="lang-toggle-mobile" class="text-lg leading-none" aria-label="Mudar idioma"></button>
     </header>
 
     <div class="lg:flex">
@@ -68,7 +68,7 @@
               class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors">
               &larr; matmoura.com
             </a>
-            <button id="lang-toggle-desktop" class="text-lg leading-none" aria-label="Change language"></button>
+            <button id="lang-toggle-desktop" class="text-lg leading-none" aria-label="Mudar idioma"></button>
           </div>
 
           <nav id="module-list" class="space-y-1"></nav>
@@ -101,11 +101,11 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                 <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm1 10H7V7h2v4zm0-5H7V4h2v2z" />
               </svg>
-              Interactive Study Prompt
+              Prompt de Estudo Interativo
             </summary>
             <div class="px-5 pb-5">
               <div class="flex justify-end mb-2">
-                <button id="copy-interactive" class="text-xs text-[var(--color-text-accent)] hover:underline">Copy
+                <button id="copy-interactive" class="text-xs text-[var(--color-text-accent)] hover:underline">Copiar
                   prompt</button>
               </div>
               <pre id="interactive-text"
@@ -115,17 +115,18 @@
           <div class="mt-10 flex justify-between items-center border-t border-[var(--color-border)] pt-6">
             <a id="prev-class"
               class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors hidden"
-              href="#">&larr; Previous</a>
+              href="#">&larr; Anterior</a>
             <div></div>
-            <a id="next-class" class="text-sm text-[var(--color-text-accent)] hover:underline hidden" href="#">Next
+            <a id="next-class" class="text-sm text-[var(--color-text-accent)] hover:underline hidden" href="#">Próxima
               &rarr;</a>
           </div>
         </div>
 
         <!-- Welcome -->
         <div id="welcome" class="max-w-3xl mx-auto px-6 py-12">
-          <h2 class="text-section mb-4">Welcome</h2>
-          <p class="text-[var(--color-text-secondary)] leading-relaxed">Select a module from the sidebar to begin.</p>
+          <h2 class="text-section mb-4">Bem-vindo</h2>
+          <p class="text-[var(--color-text-secondary)] leading-relaxed">Selecione um módulo na barra lateral para
+            começar.</p>
         </div>
 
       </main>
@@ -145,12 +146,12 @@
       let S3_BASE = 'https://akashic-harddrives.s3.us-east-1.amazonaws.com/yah/ai-business';
 
       let pathMatch = location.pathname.match(/\/ai-business\/([^/]+)/);
-      let lang = pathMatch ? pathMatch[1] : 'en';
+      let lang = pathMatch ? pathMatch[1] : 'pt-br';
       if (lang === 'pt') lang = 'pt-br';
       let CONTENT_BASE = S3_BASE + '/' + lang + '/';
       let PROGRESS_KEY = 'ab_progress_' + lang;
 
-      let currentLang = LANGS.find(function (l) { return l.code === lang; }) || LANGS[0];
+      let currentLang = LANGS.find(function (l) { return l.code === lang; }) || LANGS[1];
 
       let $ = function (sel) { return document.querySelector(sel); };
       let $$ = function (sel) { return document.querySelectorAll(sel); };
@@ -185,7 +186,7 @@
 
       $('#gate-form').addEventListener('submit', function (e) {
         e.preventDefault();
-        let code = $('#gate-input').value.trim().toUpperCase();
+        var code = $('#gate-input').value.trim().toUpperCase();
         if (code === SECRET) {
           sessionStorage.setItem(UNLOCK_KEY, '1');
           unlock();
@@ -204,7 +205,7 @@
       // ── Sidebar toggle (mobile) ──
 
       $('#sidebar-toggle').addEventListener('click', function () {
-        let sb = $('#sidebar');
+        var sb = $('#sidebar');
         sb.classList.toggle('hidden');
         sb.classList.toggle('lg:flex');
       });
@@ -221,7 +222,7 @@
       }
 
       function markRead(slug) {
-        let p = getProgress();
+        var p = getProgress();
         if (p.indexOf(slug) === -1) {
           p.push(slug);
           localStorage.setItem(PROGRESS_KEY, JSON.stringify(p));
@@ -236,10 +237,10 @@
 
       async function initCourse() {
         try {
-          let res = await fetch(CONTENT_BASE + 'index.json');
+          var res = await fetch(CONTENT_BASE + 'index.json');
           courseIndex = await res.json();
         } catch (e) {
-          $('#welcome').innerHTML = '<p class="text-red-400">Failed to load course data.</p>';
+          $('#welcome').innerHTML = '<p class="text-red-400">Falha ao carregar os dados do curso.</p>';
           return;
         }
         renderModuleList();
@@ -248,10 +249,10 @@
       }
 
       function renderModuleList() {
-        let nav = $('#module-list');
+        var nav = $('#module-list');
         nav.innerHTML = '';
         courseIndex.modules.forEach(function (mod, i) {
-          let btn = document.createElement('button');
+          var btn = document.createElement('button');
           btn.className = 'sidebar-module w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors';
           btn.dataset.moduleId = mod.id;
           btn.innerHTML =
@@ -270,16 +271,16 @@
       // ── Routing ──
 
       function handleRoute() {
-        let hash = location.hash.replace('#', '');
+        var hash = location.hash.replace('#', '');
         if (!hash) {
           showWelcome();
           highlightSidebar(null);
           return;
         }
 
-        let parts = hash.split('/');
-        let moduleId = parts[0];
-        let classId = parts[1] || null;
+        var parts = hash.split('/');
+        var moduleId = parts[0];
+        var classId = parts[1] || null;
 
         if (classId) {
           showClass(moduleId, classId);
@@ -298,7 +299,7 @@
       }
 
       async function showModule(moduleId) {
-        let data = await loadModule(moduleId);
+        var data = await loadModule(moduleId);
         if (!data) return;
 
         $('#welcome').classList.add('hidden');
@@ -306,33 +307,33 @@
         $('#module-overview').classList.remove('hidden');
         highlightSidebar(moduleId);
 
-        let mod = courseIndex.modules.find(function (m) { return m.id === moduleId; });
+        var mod = courseIndex.modules.find(function (m) { return m.id === moduleId; });
         $('#overview-title').textContent = mod.title;
-        $('#overview-subtitle').textContent = data.classes.length + ' classes';
+        $('#overview-subtitle').textContent = data.classes.length + ' aulas';
         $('#mobile-title').textContent = mod.title;
 
-        let container = $('#overview-classes');
+        var container = $('#overview-classes');
         container.innerHTML = '';
         data.classes.forEach(function (cls) {
-          let a = document.createElement('a');
+          var a = document.createElement('a');
           a.href = '#' + moduleId + '/' + cls.id;
           a.className = 'block px-4 py-3 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-colors flex items-center gap-3';
-          let read = isRead(moduleId + '/' + cls.slug);
+          var read = isRead(moduleId + '/' + cls.slug);
           a.innerHTML =
             '<span class="text-[var(--color-text-secondary)] text-xs w-6">' + cls.id + '</span>' +
             '<span class="flex-1 text-sm">' + escHtml(cls.title) + '</span>' +
             (cls.hasVideo ? '<span class="text-xs text-[var(--color-text-accent)]">&#9654;</span>' : '') +
-            (cls.interactive ? '<span class="text-xs text-[var(--color-text-accent)]" title="Has interactive prompt">&#9733;</span>' : '') +
+            (cls.interactive ? '<span class="text-xs text-[var(--color-text-accent)]" title="Possui prompt interativo">&#9733;</span>' : '') +
             (read ? '<span class="text-green-400 text-xs">&#10003;</span>' : '');
           container.appendChild(a);
         });
       }
 
       async function showClass(moduleId, classId) {
-        let data = await loadModule(moduleId);
+        var data = await loadModule(moduleId);
         if (!data) return;
 
-        let cls = data.classes.find(function (c) { return c.id === classId; });
+        var cls = data.classes.find(function (c) { return c.id === classId; });
         if (!cls) { showModule(moduleId); return; }
 
         $('#welcome').classList.add('hidden');
@@ -340,7 +341,7 @@
         $('#class-reader').classList.remove('hidden');
         highlightSidebar(moduleId);
 
-        let mod = courseIndex.modules.find(function (m) { return m.id === moduleId; });
+        var mod = courseIndex.modules.find(function (m) { return m.id === moduleId; });
 
         // Breadcrumb
         $('#breadcrumb').innerHTML =
@@ -375,12 +376,12 @@
         }
 
         // Prev / Next
-        let classIdx = data.classes.indexOf(cls);
-        let prevCls = data.classes[classIdx - 1];
-        let nextCls = data.classes[classIdx + 1];
+        var classIdx = data.classes.indexOf(cls);
+        var prevCls = data.classes[classIdx - 1];
+        var nextCls = data.classes[classIdx + 1];
 
-        let prevEl = $('#prev-class');
-        let nextEl = $('#next-class');
+        var prevEl = $('#prev-class');
+        var nextEl = $('#next-class');
 
         if (prevCls) {
           prevEl.href = '#' + moduleId + '/' + prevCls.id;
@@ -413,8 +414,8 @@
       async function loadModule(moduleId) {
         if (moduleCache[moduleId]) return moduleCache[moduleId];
         try {
-          let res = await fetch(CONTENT_BASE + moduleId + '.json');
-          let data = await res.json();
+          var res = await fetch(CONTENT_BASE + moduleId + '.json');
+          var data = await res.json();
           moduleCache[moduleId] = data;
           return data;
         } catch (e) {
@@ -433,7 +434,7 @@
       }
 
       function escHtml(str) {
-        let d = document.createElement('div');
+        var d = document.createElement('div');
         d.textContent = str;
         return d.innerHTML;
       }
@@ -441,11 +442,11 @@
       // ── Copy interactive prompt ──
 
       $('#copy-interactive').addEventListener('click', function () {
-        let text = $('#interactive-text').textContent;
+        var text = $('#interactive-text').textContent;
         navigator.clipboard.writeText(text).then(function () {
-          let btn = $('#copy-interactive');
-          let orig = btn.textContent;
-          btn.textContent = 'Copied!';
+          var btn = $('#copy-interactive');
+          var orig = btn.textContent;
+          btn.textContent = 'Copiado!';
           setTimeout(function () { btn.textContent = orig; }, 1500);
         });
       });

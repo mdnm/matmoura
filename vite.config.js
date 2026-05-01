@@ -1,5 +1,5 @@
-import { resolve } from "path"
 import tailwindcss from "@tailwindcss/vite"
+import { resolve } from "path"
 import { defineConfig } from "vite"
 
 export default defineConfig({
@@ -13,6 +13,8 @@ export default defineConfig({
         terms: resolve(__dirname, "terms/index.html"),
         "ai-business": resolve(__dirname, "ai-business/index.html"),
         "ai-business-en": resolve(__dirname, "ai-business/en/index.html"),
+        "ai-business-pt": resolve(__dirname, "ai-business/pt/index.html"),
+        "ai-business-pt-br": resolve(__dirname, "ai-business/pt-br/index.html"),
       },
     },
   },

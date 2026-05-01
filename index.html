@@ -732,7 +732,9 @@
 
       document.querySelectorAll("[data-lightbox]").forEach(function (el) {
         el.addEventListener("click", function () {
-          openLightbox(el.dataset.src, el.dataset.caption);
+          var img = el.querySelector("img");
+          var src = (img && (img.currentSrc || img.src)) || el.dataset.src;
+          openLightbox(src, el.dataset.caption);
         });
       });
 
