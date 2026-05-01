@@ -14,6 +14,13 @@ fi
 : "${S3_PREFIX:=yah/ai-business}"
 : "${COURSE_SOURCE:=/Volumes/AKASH/YAH/ai-frontrunners}"
 
+UPLOAD_VIDEOS=false
+for arg in "$@"; do
+  case "$arg" in
+    --videos) UPLOAD_VIDEOS=true ;;
+  esac
+done
+
 SOURCE_DIR="public/ai-business"
 
 if [ ! -d "$SOURCE_DIR" ]; then
@@ -29,27 +36,30 @@ aws s3 sync "$SOURCE_DIR" "s3://$S3_BUCKET/$S3_PREFIX" \
   --content-type "application/json" \
   --cache-control "public, max-age=3600"
 
-# Upload videos from module-05
-VIDEO_DIR="$COURSE_SOURCE/module-05-ai-creative"
-if [ -d "$VIDEO_DIR" ]; then
-  echo "Uploading videos from module-05..."
-  for class_dir in "$VIDEO_DIR"/*/; do
-    class_slug=$(basename "$class_dir")
-    for mp4 in "$class_dir"*.mp4; do
-      [ -f "$mp4" ] || continue
-      # Skip macOS resource fork files
-      [[ "$(basename "$mp4")" == ._* ]] && continue
-      mp4_name=$(basename "$mp4")
-      s3_key="$S3_PREFIX/videos/$class_slug/$mp4_name"
-      echo "  $class_slug/$mp4_name"
-      aws s3 cp "$mp4" "s3://$S3_BUCKET/$s3_key" \
-        --region "$AWS_REGION" \
-        --content-type "video/mp4" \
-        --cache-control "public, max-age=86400"
-    done
-  done
+# Upload videos from module-05 (only with --videos flag)
+if [ "$UPLOAD_VIDEOS" = false ]; then
+  echo "Skipping video upload (pass --videos to include)."
 else
-  echo "No video directory found at $VIDEO_DIR — skipping video upload."
+  VIDEO_DIR="$COURSE_SOURCE/module-05-ai-creative"
+  if [ -d "$VIDEO_DIR" ]; then
+    echo "Uploading videos from module-05..."
+    for class_dir in "$VIDEO_DIR"/*/; do
+      class_slug=$(basename "$class_dir")
+      for mp4 in "$class_dir"*.mp4; do
+        [ -f "$mp4" ] || continue
+        [[ "$(basename "$mp4")" == ._* ]] && continue
+        mp4_name=$(basename "$mp4")
+        s3_key="$S3_PREFIX/videos/$class_slug/$mp4_name"
+        echo "  $class_slug/$mp4_name"
+        aws s3 cp "$mp4" "s3://$S3_BUCKET/$s3_key" \
+          --region "$AWS_REGION" \
+          --content-type "video/mp4" \
+          --cache-control "public, max-age=86400"
+      done
+    done
+  else
+    echo "No video directory found at $VIDEO_DIR — skipping video upload."
+  fi
 fi
 
 echo "Done. Files at https://$S3_BUCKET.s3.amazonaws.com/$S3_PREFIX/"
