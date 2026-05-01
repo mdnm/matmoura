@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Secrets
+.env
+
+# Course content (hosted on S3, not committed)
+public/ai-business/
+
+scripts/build-course.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

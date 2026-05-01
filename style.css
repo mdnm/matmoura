@@ -317,3 +317,99 @@ select.form-input option {
 .prose-legal a:hover {
   text-decoration-color: var(--color-text-accent);
 }
+
+/* ── Course Prose ── */
+.prose-course h1,
+.prose-course h2,
+.prose-course h3 {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.prose-course h1 { font-size: 1.75rem; margin: 2rem 0 1rem; }
+.prose-course h2 { font-size: 1.375rem; margin: 2rem 0 0.75rem; }
+.prose-course h3 { font-size: 1.125rem; margin: 1.5rem 0 0.5rem; }
+.prose-course h1:first-child,
+.prose-course h2:first-child,
+.prose-course h3:first-child { margin-top: 0; }
+
+.prose-course p,
+.prose-course li {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+.prose-course p + p { margin-top: 0.75rem; }
+
+.prose-course ul,
+.prose-course ol {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.prose-course ul { list-style: disc; }
+.prose-course ol { list-style: decimal; }
+.prose-course li + li { margin-top: 0.25rem; }
+
+.prose-course strong { color: var(--color-text-primary); }
+
+.prose-course a {
+  color: var(--color-text-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(201, 162, 39, 0.4);
+  transition: text-decoration-color var(--transition-fast);
+}
+
+.prose-course a:hover { text-decoration-color: var(--color-text-accent); }
+
+.prose-course code {
+  font-size: 0.8125rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: var(--color-text-primary);
+}
+
+.prose-course pre {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.prose-course pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.prose-course blockquote {
+  border-left: 3px solid var(--color-text-accent);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.prose-course hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2rem 0;
+}
+
+.prose-course img { max-width: 100%; border-radius: var(--radius-card); margin: 1rem 0; }
+
+/* ── Sidebar module buttons ── */
+.sidebar-module {
+  color: var(--color-text-secondary);
+}
+
+.sidebar-module:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-text-primary);
+}

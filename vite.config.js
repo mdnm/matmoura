@@ -11,6 +11,8 @@ export default defineConfig({
         company: resolve(__dirname, "company/index.html"),
         privacy: resolve(__dirname, "privacy/index.html"),
         terms: resolve(__dirname, "terms/index.html"),
+        "ai-business": resolve(__dirname, "ai-business/index.html"),
+        "ai-business-en": resolve(__dirname, "ai-business/en/index.html"),
       },
     },
   },
